@@ -77,6 +77,17 @@ app.use(cors({
     `;
     res.send(htmlResponse)
   });
+
+  // Otra ruta
+app.get('/saludo', (req, res) => {
+  res.send('¡Hola, desde la ruta de saludo!');
+});
+
+// Manejo de ruta con parámetros
+app.get('/usuario/:id', (req, res) => {
+  res.send(`¡Hola, usuario ${req.params.id}!`);
+});
+
 app.use(express.json())
 app.use(router);
 app.use(bodyParser.json({ limit: '50mb' })); // Puedes ajustar el límite según tus necesidades
