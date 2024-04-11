@@ -9,11 +9,12 @@ import { clinicasRouter } from './routes/clinicas';
 import { cotizacionRouter } from './routes/cotizacion';
 import { cotizacionesRouter } from './routes/cotizaciones';
 import { empresasRouter } from './routes/empresas';
-import { planesRouter } from './routes/planes';
+// import { planesRouter } from './routes/planes';
 import { preciosRouter } from './routes/precios';
 import { quoteRouter } from './routes/quote';
 import { uploadRouter } from './routes/upload';
 import { uploadsRouter } from './routes/uploads';
+import { getItems, getItemById, createItem, updateItem, deleteItem, searchItem  } from './controllers/planes';
 
 
 
@@ -95,11 +96,20 @@ app.use(clinicasRouter);
 app.use(cotizacionRouter);
 app.use(cotizacionesRouter);
 app.use(empresasRouter);
-app.use(planesRouter);
+// app.use(planesRouter);
 app.use(preciosRouter);
 app.use(quoteRouter);
 app.use(uploadRouter);
 app.use(uploadsRouter);
+
+
+// Manejo de ruta con parámetros
+app.get('/planes',(req, res) => { getItems(req, res);});
+app.get('/planes/:id', (req, res) => { getItemById(req, res);});
+app.post('/planes', (req, res) => {createItem(req, res) });
+app.put('/planes/:id', (req, res) => { updateItem(req, res)});
+app.delete('/planes/:id', (req, res) => { deleteItem(req, res)});
+
 
 app.use(express.json())
 app.use(router);
