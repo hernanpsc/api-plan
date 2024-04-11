@@ -3,10 +3,10 @@ import { Router } from "express";
 import * as express from "express";
 import { fileUpload } from '../controllers/uploads';
 
-const router = Router();
+const uploadsRouter = Router();
 
 
-router.post('/', fileUpload);
+uploadsRouter.post('/', fileUpload);
 
-export { router }
+export { uploadsRouter }
 

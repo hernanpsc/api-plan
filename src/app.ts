@@ -4,6 +4,17 @@ import express from "express";
 import cors from "cors";
 import { router } from "./routes"
 import dbConnect from "./config/mongo";
+import { authRouter } from './routes/auth';
+import { clinicasRouter } from './routes/clinicas';
+import { cotizacionRouter } from './routes/cotizacion';
+import { cotizacionesRouter } from './routes/cotizaciones';
+import { empresasRouter } from './routes/empresas';
+import { planesRouter } from './routes/planes';
+import { preciosRouter } from './routes/precios';
+import { quoteRouter } from './routes/quote';
+import { uploadRouter } from './routes/upload';
+import { uploadsRouter } from './routes/uploads';
+
 
 
 import bodyParser from 'body-parser';
@@ -77,16 +88,18 @@ app.use(cors({
     `;
     res.send(htmlResponse)
   });
-
-  // Otra ruta
-app.get('/saludo', (req, res) => {
-  res.send('¡Hola, desde la ruta de saludo!');
-});
-
-// Manejo de ruta con parámetros
-app.get('/usuario/:id', (req, res) => {
-  res.send(`¡Hola, usuario ${req.params.id}!`);
-});
+// Rutas
+app.use(router);
+app.use(authRouter);
+app.use(clinicasRouter);
+app.use(cotizacionRouter);
+app.use(cotizacionesRouter);
+app.use(empresasRouter);
+app.use(planesRouter);
+app.use(preciosRouter);
+app.use(quoteRouter);
+app.use(uploadRouter);
+app.use(uploadsRouter);
 
 app.use(express.json())
 app.use(router);

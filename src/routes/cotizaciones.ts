@@ -2,17 +2,17 @@ import { Router } from "express";
 import * as express from "express";
 import { getItems, getItemById, createItem, updateItem, deleteItem, searchItem  } from '../controllers/cotizaciones';
 
-const router = Router();
+const cotizacionesRouter = Router();
 
-router.use(express.json());
-router.get('/',(req, res) => { getItems(req, res);});
-router.get('/:id', (req, res) => { getItemById(req, res);});
-router.post('/', (req, res) => {createItem(req, res ) });
-router.put('/:id', (req, res) => { updateItem(req, res )});
-router.delete('/:id', (req, res) => { deleteItem(req, res )});
-router.get('/search',(req, res) => {searchItem(req, res);
+cotizacionesRouter.use(express.json());
+cotizacionesRouter.get('/',(req, res) => { getItems(req, res);});
+cotizacionesRouter.get('/:id', (req, res) => { getItemById(req, res);});
+cotizacionesRouter.post('/', (req, res) => {createItem(req, res ) });
+cotizacionesRouter.put('/:id', (req, res) => { updateItem(req, res )});
+cotizacionesRouter.delete('/:id', (req, res) => { deleteItem(req, res )});
+cotizacionesRouter.get('/search',(req, res) => {searchItem(req, res);
   });
  
-export { router }
+export { cotizacionesRouter }
 
 

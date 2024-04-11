@@ -3,13 +3,13 @@ import { Router } from "express";
 import * as express from "express";
 import { getPrecios} from '../controllers/cotizacion';
 
-const router = Router();
+const cotizacionRouter = Router();
 
-router.use(express.json());
-router.post('/',getPrecios);
+cotizacionRouter.use(express.json());
+cotizacionRouter.post('/',getPrecios);
   
   
-export { router }
+export { cotizacionRouter }
 
 
 

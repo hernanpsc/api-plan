@@ -1,11 +1,11 @@
 import { Router } from "express";
 import * as express from "express";
 
-const router = Router();
+const quoteRouter = Router();
 
-router.use(express.json());
+quoteRouter.use(express.json());
 
-router.get("/",(req,res) => {
+quoteRouter.get("/",(req,res) => {
 const htmlResponse =`
     <!DOCTYPE html>
 <html lang="es">
@@ -49,3 +49,5 @@ const htmlResponse =`
     `;
     res.send(htmlResponse)
   });
+
+  export { quoteRouter }

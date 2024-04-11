@@ -2,17 +2,17 @@ import { Router } from "express";
 import * as express from "express";
 import { getItems, getItemById, createItem, updateItem, deleteItem, searchItem  } from '../controllers/precios';
 
-const router = Router();
+const preciosRouter = Router();
 
-router.use(express.json());
-router.get('/',(req, res) => { getItems(req, res);});
-router.get('/:id', (req, res) => { getItemById(req, res);});
-router.post('/', (req, res) => {createItem(req, res) });
-router.put('/:id', (req, res) => { updateItem(req, res)});
-router.delete('/:id', (req, res) => { deleteItem(req, res)});
-router.get('/search',(req, res) => {searchItem(req, res);
+preciosRouter.use(express.json());
+preciosRouter.get('/',(req, res) => { getItems(req, res);});
+preciosRouter.get('/:id', (req, res) => { getItemById(req, res);});
+preciosRouter.post('/', (req, res) => {createItem(req, res) });
+preciosRouter.put('/:id', (req, res) => { updateItem(req, res)});
+preciosRouter.delete('/:id', (req, res) => { deleteItem(req, res)});
+preciosRouter.get('/search',(req, res) => {searchItem(req, res);
   });
  
-export { router }
+export { preciosRouter }
 
 
