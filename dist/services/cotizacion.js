@@ -141,7 +141,7 @@ const calcularPrecio = async (req, res) => {
         let idPrevencion = functions.productIdPrevencion(edad_1, edad_1, numkids, tipo_IngresoPDMI);
         let schema = "precios";
         // async function fetchProductPrice(id: string) {
-        //   console.log( ' funcion en linea 183 : id: ', id)
+        //   // console.log( ' funcion en linea 183 : id: ', id)
         //  return await getProduct(id);
         // }
         const companies = await empresas_1.default.find({});
@@ -156,7 +156,7 @@ const calcularPrecio = async (req, res) => {
                 return coeficiente;
             }
             else {
-                console.log(`No se encontró la empresa ${type}.`);
+                // console.log(`No se encontró la empresa ${type}.`);
             }
         }
         // async function fetchPrices() {
@@ -215,18 +215,18 @@ const calcularPrecio = async (req, res) => {
         let precioTitular = await (0, precios_1.getProduct)(idSancor[0]);
         let precioConyuge = await (0, precios_1.getProduct)(idSancorConyuge);
         let priceGrupoGaleno = await (0, precios_1.getProduct)('galeno' + idGaleno);
-        console.log('priceAdultosPr  ', priceAdultosPr);
-        console.log('pricePrHijoMenir25  ', pricePrHijoMenir25);
-        console.log('pricePrHijoMenir1  ', pricePrHijoMenir1);
+        // console.log('priceAdultosPr  ', priceAdultosPr);
+        // console.log('pricePrHijoMenir25  ', pricePrHijoMenir25);
+        // console.log('pricePrHijoMenir1  ', pricePrHijoMenir1);
         //  priceAdultosPr =  priceAdultosPr.toObject();
         //  pricePrHijoMenir25 = pricePrHijoMenir25.toObjet();
         //  pricePrHijoMenir1 =  pricePrHijoMenir1.toObjet();
-        console.log('priceAdultosPr  ', priceAdultosPr.precios);
-        console.log('pricePrHijoMenir25  ', pricePrHijoMenir25.precios);
-        console.log('pricePrHijoMenir1  ', pricePrHijoMenir1.precios);
+        // console.log('priceAdultosPr  ', priceAdultosPr.precios);
+        // console.log('pricePrHijoMenir25  ', pricePrHijoMenir25.precios);
+        // console.log('pricePrHijoMenir1  ', pricePrHijoMenir1.precios);
         let valor_Premedic = functions.valor_Premedic(aporte_OS, buscar_mi_coeficiente('Premedic'), numkids, priceAdultosPr.precios, pricePrHijoMenir25.precios, pricePrHijoMenir1.precios, edadIdPremedic, afinidad, bonAfinidad, group);
-        console.log('valor_Premedic');
-        console.log(valor_Premedic);
+        // console.log('valor_Premedic')
+        // console.log(valor_Premedic)
         // <! -----------------------------ID PREMEDIC END---------------------------------------------------->
         // <! -----------------------------ID OMINT START---------------------------------------------------->
         // <! -----------------------------ID OMINT END---------------------------------------------------->
@@ -236,10 +236,10 @@ const calcularPrecio = async (req, res) => {
         // precio2Hijo = precio2Hijo.toObject();
         // precioTitular = precioTitular.toObject();
         // precioConyuge = precioConyuge.toObject();
-        console.log('precio1Hijo.precios:', precio1Hijo.precios);
-        console.log('precio2Hijo.precios:', precio2Hijo.precios);
-        console.log('precioTitular.precios:', precioTitular.precios);
-        console.log('precioConyuge.precios:', precioConyuge.precios);
+        // console.log('precio1Hijo.precios:', precio1Hijo.precios);
+        // console.log('precio2Hijo.precios:', precio2Hijo.precios);
+        // console.log('precioTitular.precios:', precioTitular.precios);
+        // console.log('precioConyuge.precios:', precioConyuge.precios);
         let valor_SanCor = functions.valor_SanCor(aporte_OS, buscar_mi_coeficiente('SanCor Salud'), edad_1, // dato del formulario - edad del titular
         edad_2, // dato del formulario - edad del conyuge
         numkids, // dato del formulario - cantidad total de hijos
@@ -256,18 +256,18 @@ const calcularPrecio = async (req, res) => {
         bonAfinidad, // dato del formulario 
         gen // respuesta funcion grupoFamiliars
         );
-        console.log('valor_SanCor');
-        console.log(valor_SanCor);
+        // console.log('valor_SanCor')
+        // console.log(valor_SanCor)
         // <! -----------------------------VALOR PRECIO SANCOR END---------------------------------------------------->
         // <! -----------------------------VALOR PRECIO OMINT START------------------------------------------------------>
         // precio_titular_Omint = precio_titular_Omint.toObject();
         // precio_conyuge_Omint = precio_conyuge_Omint.toObject();
         // precio_hijo1_Omint = precio_hijo1_Omint.toObject();
         // precio_hijo2_Omint = precio_hijo2_Omint.toObject();
-        console.log('precio_titular_Omint', precio_titular_Omint.precios);
-        console.log('precio_conyuge_Omint', precio_conyuge_Omint.precios);
-        console.log('precio_hijo1_Omint', precio_hijo1_Omint.precios);
-        console.log('precio_hijo2_Omint', precio_hijo2_Omint.precios);
+        // console.log('precio_titular_Omint',precio_titular_Omint.precios);
+        // console.log('precio_conyuge_Omint',precio_conyuge_Omint.precios);
+        // console.log('precio_hijo1_Omint',precio_hijo1_Omint.precios);
+        // console.log('precio_hijo2_Omint',precio_hijo2_Omint.precios);
         let valor_OMINT = functions.valorOmint(aporte_OS, edad_2, // dato del formulario - edad del conyuge
         numHijos, // respuesta funcion grupoFamiliar
         numhijo2, // hijos a partir del segundo 
@@ -279,27 +279,27 @@ const calcularPrecio = async (req, res) => {
         afinidad, // dato del formulario ( check = true/false )
         bonAfinidad, // dato del formulario % de descuento
         buscar_mi_coeficiente('OMINT'));
-        console.log('valor_OMINT');
-        console.log(valor_OMINT);
+        // console.log('valor_OMINT')
+        // console.log(valor_OMINT)
         // <! -----------------------------VALOR PRECIO OMINT END---------------------------------------------------->
         // <! -----------------------------VALOR PRECIO GALENO START---------------------------------------------------->
         // ...
         let valor_Galeno = functions.valor_Galeno(aporte_OS, priceGrupoGaleno.precios, buscar_mi_coeficiente('Galeno'));
-        console.log('valor_Galeno');
-        console.log(valor_Galeno);
+        // console.log('valor_Galeno')
+        // console.log(valor_Galeno)
         // <! -----------------------------VALOR PRECIO GALENO END----------------------------------prices------------------>
         // <! -----------------------------VALOR PRECIO GALENO START---------------------------------------------------->
         // precioTitularSwiss = precioTitularSwiss.toObjet();
         // precioConyugeSwiss = precioConyugeSwiss.toObjet();
         // precioHijo1Swiss = precioHijo1Swiss.toObjet();
         // precioHijo2Swiss = precioHijo2Swiss.toObjet();
-        console.log('precioTitularSwiss  ', precioTitularSwiss.precios);
-        console.log('precioConyugeSwiss  ', precioConyugeSwiss.precios);
-        console.log('precioHijo1Swiss  ', precioHijo1Swiss.precios);
-        console.log('precioHijo2Swiss  ', precioHijo2Swiss.precios);
+        // console.log('precioTitularSwiss  ',precioTitularSwiss.precios);
+        // console.log('precioConyugeSwiss  ',precioConyugeSwiss.precios);
+        // console.log('precioHijo1Swiss  ',precioHijo1Swiss.precios);
+        // console.log('precioHijo2Swiss  ',precioHijo2Swiss.precios);
         let valor_Swiss = functions.valor_Swiss(aporte_OS, edad_1, edad_2, numkids, numhijo2, precioTitularSwiss.precios, precioConyugeSwiss.precios, precioHijo1Swiss.precios, precioHijo2Swiss.precios, buscar_mi_coeficiente('Swiss Medical'), group);
-        console.log('valor_Swiss');
-        console.log(valor_Swiss);
+        // console.log('valor_Swiss')
+        // console.log(valor_Swiss)
         // for ( let i=0 ; i < prices.length ; i++){
         // console.log(prices[i])
         // }
@@ -344,7 +344,7 @@ const calcularPrecio = async (req, res) => {
         }
         // console.log(planesPorEmpresa); 
         const planesSwiss = combinedPlans.filter((plan) => plan.empresa === 'Swiss Medical');
-        console.log(planesSwiss);
+        // console.log(planesSwiss)
         const filteredPlansGaleno = combinedPlans.filter((plan) => plan.precio > 0);
         // Filtrar los planes con precioCalculado mayor que 0
         const galenoPlanes = combinedPlans.filter((plan) => plan.empresa !== 'GALENO');
@@ -377,7 +377,7 @@ const calcularPrecio = async (req, res) => {
             }
             return true;
         });
-        console.log(resultado);
+        // console.log(resultado)
         res.status(200).json(resultado);
     }
     catch (e) {

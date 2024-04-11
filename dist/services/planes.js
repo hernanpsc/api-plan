@@ -52,7 +52,7 @@ const getProducts = async () => {
 exports.getProducts = getProducts;
 const getProduct = async (id) => {
     const responseGetOne = await planes_1.default.findOne({ _id: id });
-    console.log(' responseGetOne : ', id);
+    // console.log( ' responseGetOne : ', id)
     return responseGetOne;
 };
 exports.getProduct = getProduct;

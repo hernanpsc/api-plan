@@ -39,6 +39,7 @@ async function dbConnect() {
     const db1 = client.db("planes");
     const db2 = client.db("precios");
     const db3 = client.db("posts");
+    const db4 = client.db("cotizaciones");
     // await applySchemaValidation(db);
     // await applySchemasValidation(db1);
     const employeesCollection = db.collection("employees");
@@ -53,6 +54,8 @@ async function dbConnect() {
     exports.collections.precios = preciosCollection;
     const postsCollection = db3.collection("posts");
     exports.collections.posts = postsCollection;
+    const cotizacionesCollection = db1.collection("cotizaciones");
+    exports.collections.cotizaciones = cotizacionesCollection;
 }
 exports.default = dbConnect;
 //# sourceMappingURL=database.js.map

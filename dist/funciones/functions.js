@@ -8,8 +8,8 @@ function combinePlansWithPrices(planes, precios) {
     planes.forEach((plan) => {
         // console.log(plan)
         const matchingPrecio = precios.find((precio) => precio.item_id === plan.item_id);
-        //   console.log(plan.item_id);
-        //   console.log(precios.item_id);
+        //   // console.log(plan.item_id);
+        //   // console.log(precios.item_id);
         if (matchingPrecio) {
             // Combina todas las propiedades de planes y precios en un nuevo objeto
             const combinedPlan = {

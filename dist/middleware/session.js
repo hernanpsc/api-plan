@@ -17,7 +17,7 @@ const checkJwt = (req, res, next) => {
         }
     }
     catch (e) {
-        console.log({ e });
+        // console.log({ e });
         res.status(400);
         res.send("SESSION_NO_VALIDA");
     }

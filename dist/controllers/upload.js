@@ -6,8 +6,8 @@ const storage_1 = require("../services/storage");
 const getFile = async (req, res) => {
     try {
         const { user, file } = req;
-        console.log(user);
-        console.log(file);
+        // console.log(user)
+        // console.log(file)
         const dataToRegister = {
             filename: `${file?.filename}`,
             idUser: `${user?.id}`,

@@ -4,7 +4,7 @@ exports.logMiddleware = void 0;
 const logMiddleware = (req, res, next) => {
     const header = req.headers;
     const userAgent = header["user-agent"];
-    console.log("userAgent", userAgent);
+    // console.log("userAgent",userAgent);
     next();
 };
 exports.logMiddleware = logMiddleware;
